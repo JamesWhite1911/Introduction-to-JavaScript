@@ -18,6 +18,14 @@ Do the following:
    HINT: no function required
 */
 
+let votingAge = 1;
+if (votingAge >= 18){
+  true;
+}
+else{
+  false;
+}
+
 /*
 Task 1b - Values
 
@@ -29,8 +37,11 @@ Do the following:
    HINT: no function required
 */
 
-
-
+let var1 = 10;
+let var2 = 20;
+if (var2 === 20){
+  var1 = 30;
+}
 
 
 /*
@@ -43,9 +54,8 @@ Do the following:
 
    HINT: look up the Number method
 */
-
-
-
+let myString = "1999";
+Number(myString);
 
 /*
 Task 1d - Multiply
@@ -60,8 +70,6 @@ function multiply(a, b){
     return a * b;
   }
 
-
-
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 //Age in Dog years
@@ -72,11 +80,9 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+    return age * 7;
 }
-
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -104,12 +110,35 @@ Use the hungryDog function and feeding requirements below to do the following:
     
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
-
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight, age){
+  if (age >= 1){
+    if (weight > 15)
+    {
+      return weight * .02;
+    }
+    if (weight >=11 && weight <= 15)
+    {
+      return weight * .03;
+    }
+    if (weight >= 6 && weight < 10){
+      return weight * .04;
+    }
+    if (weight < 6){
+      return weight * .05;
+    }
   }
-
-
+  if (age < 1){
+    if (age >= .7){
+      return weight * .04;
+    }
+    if (age >= .4 && age < 7){
+      return weight * .05;
+    }
+    if (age >= .2 && age < 4){
+      return weight * .1;
+    }
+  }
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -133,7 +162,7 @@ Use the game function below to do the following:
 */
 
 function game(user, computer){
-    /*add your code here*/
+    let myRand = Math.round(Math.random());
 }
   
   
@@ -149,8 +178,7 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(){
   }
 
 
@@ -163,8 +191,9 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(cm){
+  let cmInFt = 1/30.48;
+  return cm * cmInFt;
   }
  
 
@@ -178,9 +207,11 @@ Using the annoyingSong function below do the following:
   2. At each invocation, it should RETURN this string (note: the tests are expecting the same string as below):
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
-
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(number){
+  for (let i = number; i > 0; i--)
+  {
+    return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i-1} bottles of soda on the wall`;
+  }        
   }
 
 
@@ -198,9 +229,19 @@ Using the grade function below do the following:
    60-69 should return 'you got a D'
    below should return 'you got an F'
 */
-  
-function grade(){
-  
+let score = 100;
+function grade(score){
+  if (score >= 90 && score <= 100){
+    return 'you got an A';
+  } if (score >= 80 && score < 90){
+    return 'you got a B';
+  } if (score >= 70 && score < 80){
+    return 'you got a C';
+  } if (score >= 60 && score < 70){
+    return 'you got a D';
+  } if (score < 60){
+    return 'you got an F';
+  }
 }
   
 
