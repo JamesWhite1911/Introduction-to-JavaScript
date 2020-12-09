@@ -160,9 +160,55 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+let rng = Math.random();
+let computer = "";
+if (rng  < .33){
+  computer = "rock";
+}
+if (rng >=.33 && rng < .66){
+  computer = "paper";
+}
+if (rng >=.66 && rng <= 1){
+  computer = "scissors";
+}
 
 function game(user, computer){
-    let myRand = Math.round(Math.random());
+    if (user === "rock" && computer === "paper")
+    {
+      return "you lose!";
+    }
+    if (user === "paper" && computer === "paper")
+    {
+      return "it's a tie";
+    }
+    if (user === "scissors" && computer === "paper")
+    {
+      return "you win!";
+    }
+    if (user === "scissors" && computer === "rock")
+    {
+      return "you lose!";
+    }
+    if (user === "rock" && computer === "rock")
+    {
+      return "it's a tie";
+    }
+    if (user === "paper" && computer === "rock")
+    {
+      return "you win!";
+    }
+    if (user === "paper" && computer === "scissors")
+    {
+      return "you lose!";
+    }
+    if (user === "scissors" && computer === "scissors")
+    {
+      return "it's a tie";
+    }
+    if (user === "rock" && computer === "scissors")
+    {
+      return "you win!";
+    }
 }
   
   
@@ -178,10 +224,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(){
+function miles(kilometers){
+  return kilometers * 0.621371;
   }
-
-
 
 //Task 5b - Feet to CM
 /*
